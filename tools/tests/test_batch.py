@@ -38,7 +38,7 @@ class Tests(unittest.TestCase):
   subprocess.run(['ffmpeg','-v','error','-y','-f','lavfi','-i','testsrc2=size=320x240:rate=20','-t','8','-c:v','mpeg4',str(p)],check=True)
   j=Job(p,1,1,'Long');e=Engine();e.progress=lambda v:e.cancel()
   with self.assertRaises(Cancelled):e.convert(j,self.out)
-  self.assertFalse((self.out/j.relative()).exists());self.assertFalse(list(self.out.rglob('.roundtv-*')))
+  self.assertFalse((self.out/j.relative()).exists());self.assertFalse(list(self.out.rglob('.the_henthorne_display-*')))
  def test_bad_input_cleanup(self):
   j=Job(self.touch('broken.mp4'),1,1,'Broken')
   with self.assertRaises(ValueError):Engine().convert(j,self.out)

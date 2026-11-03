@@ -1,4 +1,4 @@
-"""Native Tk desktop interface for the RoundTV media converter."""
+"""Native Tk desktop interface for the The_Henthorne_Display media converter."""
 import queue
 import threading
 from pathlib import Path
@@ -8,14 +8,14 @@ from batch import Engine, Cancelled, scan, check_plan, find_tools
 
 class App:
     def __init__(self,root):
-        self.root=root;root.title('RoundTV Box Media Prep');root.geometry('1080x730');root.minsize(830,620)
+        self.root=root;root.title('The_Henthorne_Display Box Media Prep');root.geometry('1080x730');root.minsize(830,620)
         self.events=queue.Queue();self.jobs=[];self.busy=False;self.engine=None;self.closing=False;self.scanned_source=None
         self.source=tk.StringVar();self.dest=tk.StringVar();self.season=tk.IntVar(value=1);self.start=tk.IntVar(value=1)
         self.auto=tk.BooleanVar(value=True);self.overwrite=tk.BooleanVar(value=False)
         self.fps=tk.StringVar(value='24');self.quality=tk.StringVar(value='5');self.status=tk.StringVar(value='Choose a source folder and an SD card or staging folder.')
         self.controls=[]
         outer=ttk.Frame(root,padding=18);outer.pack(fill='both',expand=True)
-        ttk.Label(outer,text='RoundTV Box Media Prep',font=('Helvetica',22,'bold')).pack(anchor='w')
+        ttk.Label(outer,text='The_Henthorne_Display Box Media Prep',font=('Helvetica',22,'bold')).pack(anchor='w')
         ttk.Label(outer,text='Prepare a whole folder for your round-screen TV. Originals stay untouched.').pack(anchor='w',pady=(3,15))
         paths=ttk.Frame(outer);paths.pack(fill='x');paths.columnconfigure(1,weight=1)
         for n,(label,var) in enumerate([('Video folder',self.source),('Output / SD root',self.dest)]):
@@ -135,7 +135,7 @@ class App:
         if self.busy:self.closing=True;self.cancel()
         else:self.root.destroy()
     def save_report(self):
-        path=filedialog.asksaveasfilename(parent=self.root,defaultextension='.txt',initialfile='RoundTV-conversion-report.txt')
+        path=filedialog.asksaveasfilename(parent=self.root,defaultextension='.txt',initialfile='The_Henthorne_Display-conversion-report.txt')
         if path:
             try:Path(path).write_text('\n'.join(self.report),encoding='utf-8')
             except OSError as e:messagebox.showerror('Cannot save report',str(e),parent=self.root)

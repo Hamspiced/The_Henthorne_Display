@@ -1,5 +1,5 @@
 # R7 — bounded video dropping and remote diagnostics
-Release `0.2.6-box` targets Waveshare ESP32-S3-Touch-LCD-1.85C-Box, including PCB V2.1 using the V2 image. The menu reads `ROUND TV R7`. Source, tests, and firmware now live at the repository root; the browser installer is linked in README.md.
+Release `0.2.6-box` targets Waveshare ESP32-S3-Touch-LCD-1.85C-Box, including PCB V2.1 using the V2 image. The menu reads `The_Henthorne_Display R7`. Source, tests, and firmware now live at the repository root; the browser installer is linked in README.md.
 
 ## Motivation and limits
 The reported failure is a frozen picture around ten minutes into playback while audio continues and controls still respond. These changes address identified firmware weaknesses; they have not been confirmed to eliminate the freeze on physical hardware.
@@ -26,4 +26,4 @@ All nine controls remain visible without scrolling, including normal and wrapped
 The ten-second audio read-ahead limit, five-second prefill, stall recovery, codec unity gain, fixed V2 half-amplitude ceiling, 50% boot volume, pause/resume, and existing Box media profile remain unchanged. Legacy releases are archived outside the active repository.
 
 ## Remote acceptance
-Flash `firmware/v2/roundtv_box_merged.bin` at `0x0` for PCB V2.1. Play a full episode on the actual board. If freezing recurs, capture the controls footer twice several seconds apart and report whether `V` advances. Increasing `V` points toward UI/display investigation; a stationary count and persistent stage narrow the investigation but are not conclusive. Host tests and compilation do not replace this hardware test.
+Flash `firmware/v2/The_Henthorne_Display_merged.bin` at `0x0` for PCB V2.1. Play a full episode on the actual board. If freezing recurs, capture the controls footer twice several seconds apart and report whether `V` advances. Increasing `V` points toward UI/display investigation; a stationary count and persistent stage narrow the investigation but are not conclusive. Host tests and compilation do not replace this hardware test.

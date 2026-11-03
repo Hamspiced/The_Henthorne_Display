@@ -1,16 +1,16 @@
-# RoundTV
+# The_Henthorne_Display
 A round-screen, SD-card TV player for the **Waveshare ESP32-S3-Touch-LCD-1.85C-Box, PCB V2.1**, using its ES8311 codec and built-in speaker. Current firmware: **R7 / 0.2.6-box**.
 
 ## Finished build
-A finished RoundTV in a Stargate-style enclosure, showing the splash screen and video playback.
+A finished The_Henthorne_Display in a Stargate-style enclosure, showing the splash screen and video playback.
 
 <p>
-  <img src="docs/images/finished-build-splash.jpg" alt="Finished RoundTV in a Stargate-style enclosure displaying the blue splash screen" width="420">
-  <img src="docs/images/finished-build-playback.jpg" alt="Finished RoundTV displaying video playback in its circular screen" width="420">
+  <img src="docs/images/finished-build-splash.jpg" alt="Finished The_Henthorne_Display in a Stargate-style enclosure displaying the blue splash screen" width="420">
+  <img src="docs/images/finished-build-playback.jpg" alt="Finished The_Henthorne_Display displaying video playback in its circular screen" width="420">
 </p>
 
 ## Install over USB
-Open **https://hamspiced.github.io/RoundTV/** in desktop Chrome or Edge. Connect with a USB data cable, confirm the PCB revision, and select **Connect & install R7**. No IDE or command-line tools are needed.
+Open **https://hamspiced.github.io/The_Henthorne_Display/** in desktop Chrome or Edge. Connect with a USB data cable, confirm the PCB revision, and select **Connect & install R7**. No IDE or command-line tools are needed.
 
 Only the V2.1 Box is supported. Other displays, older hardware revisions, and ESP32-C5 are not interchangeable. The flasher detects the ESP32-S3 chip, not the display/audio hardware; check your PCB before installing.
 

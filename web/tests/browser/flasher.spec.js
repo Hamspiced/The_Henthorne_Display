@@ -1,5 +1,13 @@
 import { test, expect } from "@playwright/test";
 
+test("the renamed project and repository links are visible", async ({ page }) => {
+  await page.goto("./");
+  await expect(page).toHaveTitle("The_Henthorne_Display · USB firmware installer");
+  await expect(page.locator(".brand")).toContainText("The_Henthorne_Display");
+  await expect(page.getByRole("link", { name: "Source & documentation" })).toHaveAttribute(
+    "href", "https://github.com/Hamspiced/The_Henthorne_Display");
+});
+
 async function mockSerial(page) {
   await page.addInitScript(() => {
     window.portRequests = 0;

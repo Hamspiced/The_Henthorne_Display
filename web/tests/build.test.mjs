@@ -12,10 +12,10 @@ test("only the verified S3 V2.1 merged release is accepted", async () => {
 });
 
 test("tampered bytes and unsupported hardware fail closed", async () => {
-  const dir = await mkdtemp(path.join(os.tmpdir(), "roundtv-integrity-"));
+  const dir = await mkdtemp(path.join(os.tmpdir(), "the_henthorne_display-integrity-"));
   try {
     await cp(path.join(root, "firmware"), dir, { recursive: true });
-    const image = path.join(dir, "v2/roundtv_box_merged.bin");
+    const image = path.join(dir, "v2/The_Henthorne_Display_merged.bin");
     const bytes = await readFile(image);
     bytes[bytes.length - 1] ^= 1;
     await writeFile(image, bytes);
@@ -30,9 +30,12 @@ test("tampered bytes and unsupported hardware fail closed", async () => {
 });
 
 test("static output has correct manifest, same-origin assets, and no source leakage", async () => {
-  const dir = await mkdtemp(path.join(os.tmpdir(), "roundtv-site-"));
+  const dir = await mkdtemp(path.join(os.tmpdir(), "the_henthorne_display-site-"));
   try {
     await buildSite(dir);
+    const html = await readFile(path.join(dir, "index.html"), "utf8");
+    assert.match(html, /<title>The_Henthorne_Display/);
+    assert.doesNotMatch(html, /RoundTV|ROUND TV/);
     const manifest = JSON.parse(await readFile(path.join(dir, "manifest.json")));
     assert.equal(manifest.new_install_improv_wait_time, 0);
     assert.deepEqual(manifest.builds.map((b) => b.chipFamily), ["ESP32-S3"]);

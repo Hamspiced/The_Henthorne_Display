@@ -191,6 +191,7 @@ static void clear_menu(const std::string &title) {
     lv_obj_set_style_pad_all(menu,10,0);lv_obj_set_style_pad_row(menu,8,0);
     lv_obj_set_flex_flow(menu,LV_FLEX_FLOW_COLUMN);lv_obj_add_flag(menu,LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_scrollbar_mode(menu,LV_SCROLLBAR_MODE_AUTO);lv_obj_set_scroll_dir(menu,LV_DIR_VER);lv_obj_scroll_to_y(menu,0,LV_ANIM_OFF);
+    lv_obj_set_style_text_font(heading,&lv_font_montserrat_20,0);
     lv_label_set_text(heading,title.c_str()); set_menu(true);
 }
 static void row(const std::string &text,int code) {
@@ -232,7 +233,8 @@ static void update_audio_status(const player::Status &state) {
     lv_label_set_text(audio_status,text);
 }
 static void show_controls() {
-    clear_menu("ROUND TV R7");
+    clear_menu("The_Henthorne_Display R7");
+    lv_obj_set_style_text_font(heading,&lv_font_montserrat_16,0);
     lv_obj_set_size(menu,274,224);lv_obj_set_pos(menu,43,83);
     lv_obj_set_layout(menu,0);lv_obj_set_style_pad_all(menu,0,0);
     lv_obj_clear_flag(menu,LV_OBJ_FLAG_SCROLLABLE);lv_obj_set_scrollbar_mode(menu,LV_SCROLLBAR_MODE_OFF);

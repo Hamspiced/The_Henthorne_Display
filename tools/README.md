@@ -1,6 +1,6 @@
-# RoundTV 1.85C-Box Media Prep
+# The_Henthorne_Display 1.85C-Box Media Prep
 
-A desktop GUI for preparing a whole folder of videos for your RoundTV firmware.
+A desktop GUI for preparing a whole folder of videos for your The_Henthorne_Display firmware.
 This is a Python/Tk application with a Mac double-click launcher, not a compiled
 or signed standalone .app. Use only with the included 1.85C-Box firmware.
 
@@ -12,12 +12,12 @@ With Homebrew installed, run:
 brew install python@3.13 python-tk@3.13 ffmpeg
 ```
 
-Then double-click **Launch RoundTV.command** in this folder. Keep the Python
+Then double-click **Launch The_Henthorne_Display.command** in this folder. Keep the Python
 files next to it. If Finder does not launch the script, open Terminal in this
 folder and run:
 
 ```sh
-bash "Launch RoundTV.command"
+bash "Launch The_Henthorne_Display.command"
 ```
 
 Alternatively, launch the GUI using `python3.13 prepare_media.py`.
@@ -76,8 +76,8 @@ files above that are rejected. Firmware limits are 1,024 episodes in total and
 The original commands remain available with arguments:
 
 ```sh
-python3.13 prepare_media.py video input.mp4 --sd /Volumes/ROUNDTV --season 1 --episode 1
-python3.13 prepare_media.py splash input.gif --sd /Volumes/ROUNDTV
+python3.13 prepare_media.py video input.mp4 --sd /Volumes/SDCARD --season 1 --episode 1
+python3.13 prepare_media.py splash input.gif --sd /Volumes/SDCARD
 python3.13 prepare_media.py --help
 ```
 

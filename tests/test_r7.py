@@ -51,7 +51,7 @@ def fixture(path):
 
 
 def main():
-    with tempfile.TemporaryDirectory(prefix="roundtv-r7-tests-") as temp:
+    with tempfile.TemporaryDirectory(prefix="the_henthorne_display-r7-tests-") as temp:
         work = Path(temp)
         for name, sources, flags in [
             ("video_pacing_test", ["tests/video_pacing_test.cpp"], []),

@@ -44,6 +44,10 @@ int main(int argc,char**argv){
  catalog::Season season;season.name="01";season.episodes.push_back({"01 - Episode title","test.avi"});seasons.push_back(season);
  if(argc>1)problem="SD audio read failed. Check card and video.avi.";
  show_controls();lv_obj_update_layout(menu);
+ assert(std::string(lv_label_get_text(heading))=="The_Henthorne_Display R7");
+ lv_point_t hs;lv_txt_get_size(&hs,lv_label_get_text(heading),lv_obj_get_style_text_font(heading,0),0,0,LV_COORD_MAX,LV_TEXT_FLAG_NONE);
+ assert(hs.x<=260 && hs.y<=20);
+ for(int x:{180-int(hs.x)/2,180+(int(hs.x)+1)/2})for(int y:{38,38+int(hs.y)})assert((x-180)*(x-180)+(y-180)*(y-180)<180*180);
  assert(!lv_obj_has_flag(menu,LV_OBJ_FLAG_SCROLLABLE));
  int buttons=0;
  for(uint32_t i=0;i<lv_obj_get_child_cnt(menu);++i){

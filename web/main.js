@@ -42,7 +42,7 @@ async function prepare() {
     if (!response.ok) throw new Error(`Release information unavailable (${response.status})`);
     const release = await response.json();
     if (release.chipFamily !== "ESP32-S3" || release.version !== "0.2.6-box" ||
-        !/^firmware\/roundtv-r7-v2\.1-[a-f0-9]{12}\.bin$/.test(release.path) ||
+        !/^firmware\/the_henthorne_display-r7-v2\.1-[a-f0-9]{12}\.bin$/.test(release.path) ||
         !/^[a-f0-9]{64}$/.test(release.sha256)) throw new Error("Unexpected release information");
     const firmware = await fetch(new URL(release.path, location.href), { cache: "no-store" });
     if (!firmware.ok) throw new Error(`Firmware download unavailable (${firmware.status})`);

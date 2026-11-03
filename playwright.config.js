@@ -5,7 +5,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   use: {
-    baseURL: process.env.SITE_URL || "http://127.0.0.1:4173/RoundTV/",
+    baseURL: process.env.SITE_URL || "http://127.0.0.1:4173/The_Henthorne_Display/",
     browserName: "chromium",
     launchOptions: process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {},
     screenshot: "only-on-failure"
@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   webServer: process.env.SITE_URL ? undefined : {
     command: "npm run serve",
-    url: "http://127.0.0.1:4173/RoundTV/",
+    url: "http://127.0.0.1:4173/The_Henthorne_Display/",
     reuseExistingServer: !process.env.CI
   }
 });

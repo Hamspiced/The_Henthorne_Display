@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare RoundTV media without formatting or erasing any drive.
+"""Prepare The_Henthorne_Display media without formatting or erasing any drive.
 
 Requires Python 3.9+, FFmpeg/ffprobe; splash conversion also requires Pillow.
 Writes via a temporary file and refuses replacement unless --overwrite is explicit.
@@ -72,7 +72,7 @@ def video(args, runner=run, prober=probe):
     filters = (f"fps={args.fps},scale=trunc(iw*sar/2)*2:ih,setsar=1,"
                "scale=360:360:force_original_aspect_ratio=increase:force_divisible_by=2:flags=lanczos,"
                "crop=360:360:(iw-ow)/2:(ih-oh)/2,setsar=1")
-    fd, temporary = tempfile.mkstemp(prefix=".roundtv-", suffix=".avi", dir=destination.parent)
+    fd, temporary = tempfile.mkstemp(prefix=".the_henthorne_display-", suffix=".avi", dir=destination.parent)
     os.close(fd)
     try:
         cmd = ["ffmpeg", "-hide_banner", "-loglevel", "warning", "-y", "-i", source]
@@ -102,7 +102,7 @@ def splash(args):
     output_guard(destination, args.overwrite)
     if source == destination.resolve():
         raise ValueError("Use a separate source GIF; input and output must differ.")
-    with tempfile.TemporaryDirectory(prefix="roundtv-gif-") as work:
+    with tempfile.TemporaryDirectory(prefix="the_henthorne_display-gif-") as work:
         intermediate = Path(work) / "normalized.gif"
         # At most 20 fps. Palette and frame disposal are handled by FFmpeg and Pillow.
         filters = (f"fps={args.fps},scale=240:240:force_original_aspect_ratio=increase,"
@@ -119,7 +119,7 @@ def splash(args):
                 raise ValueError("GIF has too many frames; use a shorter animation.")
         if intermediate.stat().st_size > 2 * 1024 * 1024:
             raise ValueError("GIF exceeds 2 MiB. Use a shorter or simpler animation.")
-        fd, tmp = tempfile.mkstemp(prefix=".roundtv-", suffix=".gif", dir=destination.parent)
+        fd, tmp = tempfile.mkstemp(prefix=".the_henthorne_display-", suffix=".gif", dir=destination.parent)
         os.close(fd)
         try:
             shutil.copyfile(intermediate, tmp)

@@ -8,7 +8,7 @@ const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", "
 const server = http.createServer(async (req, res) => {
   try {
     let pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
-    if (pathname.startsWith("/RoundTV/")) pathname = pathname.slice("/RoundTV".length);
+    if (pathname.startsWith("/The_Henthorne_Display/")) pathname = pathname.slice("/The_Henthorne_Display".length);
     if (pathname.endsWith("/")) pathname += "index.html";
     const file = path.resolve(root, "." + pathname);
     if (!file.startsWith(root + path.sep)) throw new Error("Forbidden");
@@ -20,4 +20,4 @@ const server = http.createServer(async (req, res) => {
     res.end("Not found");
   }
 });
-server.listen(Number(process.env.PORT || 4173), "127.0.0.1", () => console.log("RoundTV preview: http://127.0.0.1:4173/RoundTV/"));
+server.listen(Number(process.env.PORT || 4173), "127.0.0.1", () => console.log("The_Henthorne_Display preview: http://127.0.0.1:4173/The_Henthorne_Display/"));
