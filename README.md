@@ -1,6 +1,9 @@
 # The_Henthorne_Display
 A round-screen, SD-card TV player for the **Waveshare ESP32-S3-Touch-LCD-1.85C-Box, PCB V2.1**, using its ES8311 codec and built-in speaker. Current firmware: **R7 / 0.2.6-box**.
 
+- [Purchase the Waveshare display](https://www.waveshare.com/esp32-s3-touch-lcd-1.85c.htm?sku=30684) — confirm the **1.85C-Box, PCB V2.1** variant before ordering.
+- [Official Waveshare Wiki](https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.85C) — hardware documentation, pinouts, and resources.
+
 ## Finished build
 A finished The_Henthorne_Display in a Stargate-style enclosure, showing the splash screen and video playback.
 
