@@ -12,6 +12,13 @@ A finished The_Henthorne_Display in a Stargate-style enclosure, showing the spla
   <img src="docs/images/finished-build-playback.jpg" alt="Finished The_Henthorne_Display displaying video playback in its circular screen" width="420">
 </p>
 
+### Display in action
+The animated splash running on the display:
+
+<p>
+  <img src="docs/images/finished-build-demo.gif" alt="Looping video of the display playing its blue animated splash" width="420">
+</p>
+
 ## Install over USB
 Open **https://hamspiced.github.io/The_Henthorne_Display/** in desktop Chrome or Edge. Connect with a USB data cable, confirm the PCB revision, and select **Connect & install R7**. No IDE or command-line tools are needed.
 
